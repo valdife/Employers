@@ -3,12 +3,12 @@ class Employer {
     String surname;
     int age;
 
-    public void prezentacjaPostaci() {          // i had to name it like that
+    void prezentacjaPostaci() {          // i had to name it like that
         System.out.println(name + " " + surname + " " + age);
     }
 }
 
-
+//testing commit
 public class Firm {
 
     public static void main(String[] args) {
