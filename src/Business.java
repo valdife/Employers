@@ -1,32 +1,10 @@
+package employer;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-class Human {
-    private String name;
-    private String surname;
-    private Integer age;
-
-    Human(String name, String surname, Integer age) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-    }
-
-    void showFullName() {
-        System.out.println(name + " " + surname);
-    }
-
-    String getSurname(){
-        return surname;
-    }
-
-    int getAge() {
-        return age;
-    }
-}
 
 public class Business {
     private static String corrSurname(String inputSur) {
@@ -39,7 +17,7 @@ public class Business {
         System.out.println("Enter database name: ");
         String fName = readFileName.nextLine();
         try {
-            Scanner read = new Scanner(new File("src/" + fName));
+            Scanner read = new Scanner(new File("src/employer/" + fName));
             List<Human> emps = new ArrayList<>();
             try {
                 while (read.hasNextLine()) {
@@ -55,7 +33,7 @@ public class Business {
                 boolean found = false;
                 for (Human emp : emps) {
                     if (propSur.equals(emp.getSurname())) {
-                        emp.showFullName();
+                        System.out.println(emp.toString());;
                         System.out.println("This person is " + emp.getAge() + " years old.");
                         found = true;
                     }
